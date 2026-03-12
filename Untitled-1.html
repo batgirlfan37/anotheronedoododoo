@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+
+.reveal {
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+.reveal.active {
+
+    opacity: 1;
+    transform: translateY(0);
+}
+
+    
+
+
+</style>
+
+<body>
+
+<h1 class="reveal">Lorem Ipsum</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque quas numquam, eveniet minus dignissimos id excepturi, molestiae ab, qui dolorum fuga. Eius maxime sapiente eveniet numquam veniam mollitia unde quis.</p>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque quas numquam, eveniet minus dignissimos id excepturi, molestiae ab, qui dolorum fuga. Eius maxime sapiente eveniet numquam veniam mollitia unde quis.</p>
+
+<script>
+    window.addEventListener("scroll", reveal);
+
+function reveal() {
+    
+    const elements = document.querySelectorAll(".reveal");
+
+    elements.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+
+        if(elementTop < windowHeight - 100){
+            el.classlist.add("active");
+        }
+    });
+
+}
+</script>
+
+</body>
+</head>
+</html>
